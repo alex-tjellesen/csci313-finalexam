@@ -1,0 +1,36 @@
+<div *ngIf="orders.length > 0">
+    <table mat-table [dataSource]="orders" class="mat-elevation-z8">
+ 
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Order ID </th>
+            <td mat-cell *matCellDef="let order"> {{order.orderId}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="cost">
+            <th mat-header-cell *matHeaderCellDef> Cost </th>
+            <td mat-cell *matCellDef="let order"> {{order.totalCost | currency:'USD':'symbol'}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="items">
+            <th mat-header-cell *matHeaderCellDef> Items </th>
+            <td mat-cell *matCellDef="let order">
+                <ul id="items">
+                  <li *ngFor="let item of order.items" >{{item.productName}} (x{{item.quantity}})</li>
+                </ul>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> Order Date </th>
+            <td mat-cell *matCellDef="let order"> {{order.date}} </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+</div>
+<div class="center" *ngIf="orders.length === 0">
+    <h1><i>You have no past orders.</i></h1>
+</div>
+  

@@ -1,0 +1,15 @@
+.content {
+    padding: 16px;
+}
+  
+.product-simple {
+    margin-bottom: 16px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.content a {
+    color: black;
+    text-decoration: none;
+}

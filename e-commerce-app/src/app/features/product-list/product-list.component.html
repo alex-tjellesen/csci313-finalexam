@@ -1,0 +1,20 @@
+<div class="content">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div 
+        [fxFlex]="(100/gridColumns)+'%'" 
+        fxFlex.xs="100%"
+        fxFlex.sm="33%"
+        *ngFor="let product of products">
+        <a routerLink="/product/{{product.id}}">
+            <mat-card fxFill class="product-simple">
+                <mat-card-header>
+                    <mat-card-title>{{product.title}}</mat-card-title>
+                </mat-card-header>
+                <img mat-card-md-image src={{product.image}}>
+                <mat-card-subtitle>{{product.price | currency:'USD':'symbol'}}</mat-card-subtitle>
+            </mat-card>
+        </a> 
+      </div>
+    </div>
+</div>
+

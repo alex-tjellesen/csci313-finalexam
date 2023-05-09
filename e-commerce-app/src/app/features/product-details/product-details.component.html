@@ -1,0 +1,18 @@
+<ng-container *ngIf="product">
+    <div class="container">
+        <img src="{{product.image}}" alt="{{product.title}}">
+        <div class="product-details">
+            <h1>{{product.title}}</h1>
+            <h2>{{product.category}}</h2>
+            <hr>
+            <p>{{product.description}}</p>
+            <hr>
+            <h3>Price: {{product.price | currency:'USD':'symbol'}}</h3>
+            <div>
+                {{product.rating.rate}}/5&emsp;<i>{{product.rating.count}} ratings</i>
+            </div>
+            <br>
+            <button mat-raised-button color="primary" (click)="addToCart()">Add to Cart</button>
+        </div>
+    </div>
+</ng-container>

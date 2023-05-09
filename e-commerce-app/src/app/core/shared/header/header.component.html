@@ -1,0 +1,35 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Fake Store</span>
+      <span class="spacer"></span>
+      
+      <a mat-button routerLink="/products">
+        Products
+        <mat-icon>store</mat-icon>
+      </a>
+      <a mat-button routerLink="/search">
+        Search
+        <mat-icon>search</mat-icon>
+      </a>
+      <a mat-button routerLink="/register">
+        Register
+        <mat-icon>person_add</mat-icon>
+      </a>
+      <a mat-button routerLink="/login">
+        Login
+        <mat-icon>person</mat-icon>
+      </a>
+      <a mat-button routerLink="/cart">
+        Cart
+        <mat-icon>shopping_cart</mat-icon>
+      </a>
+      <a mat-button routerLink="/orders">
+        Orders
+        <mat-icon>history</mat-icon>
+      </a>
+      <span class="user"></span>
+      <ng-container *ngIf="user">
+        User: {{user.name}}
+      </ng-container>      
+    </mat-toolbar-row>
+</mat-toolbar>

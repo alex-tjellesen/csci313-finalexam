@@ -1,0 +1,17 @@
+.center {
+    padding: 20px;
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.buttons{
+    text-align: center;
+}
+
+button {
+    margin-right: 10px; 
+}
